@@ -1,0 +1,14 @@
+services:
+  realtime-ce-backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+  realtime-ce-frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    env_file: ./Frontend/.env
+    ports:
+      - 3000:80
